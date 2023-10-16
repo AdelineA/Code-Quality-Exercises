@@ -14,10 +14,10 @@ export default function isValidPassword(password = "") {
   // check if a password is included in the forbiden passwords
   if (forbiddenPasswords.includes(password)) return false;
 
-  // check if valid password length is 10
+  // check if password doesn't contain special characters and has 10 digits
   if (!/^[a-zA-Z0-9]{10}$/.test(password)) return false;
 
-  // check if password doesn't contain special characters has only mixture of upper case, lower case and number
+  // check if password contain atleast a number, lowercase, and uppercase
   if (
     !/[0-9]/.test(password) ||
     !/[a-z]/.test(password) ||
