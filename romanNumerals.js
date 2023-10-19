@@ -1,8 +1,8 @@
-function solution(roman) {
+function romanToIntegerConverter(roman) {
   // complete the solution by transforming the
   // string roman numeral into an integer
 
-  let romanChar = {
+  const romanCharacters = {
     I: 1,
     V: 5,
     X: 10,
@@ -11,16 +11,18 @@ function solution(roman) {
     D: 500,
     M: 1000,
   };
-  return roman.split("").reduce((acc, curr, index, array) => {
-    if (
-      (curr === "I" && array[index + 1] === "v") ||
-      array[index + 1] === "x" ||
-      (curr === "x" && array[index + 1] === "L") ||
-      array[index + 1 === "c"] ||
-      (curr === "C" && array[index + 1] === "D") ||
-      array[index + 1] === "M"
-    )
-      return acc - romanChar[curr];
-    return acc + romanChar[curr];
-  }, 0);
+  return roman
+    .split("")
+    .reduce((accumulator, currentCharacter, array, index) => {
+      if (
+        (currentCharacter === "I" && array[index + 1] === "v") ||
+        array[index + 1] === "x" ||
+        (currentCharacter === "x" && array[index + 1] === "L") ||
+        array[index + 1 === "c"] ||
+        (currentCharacter === "C" && array[index + 1] === "D") ||
+        array[index + 1] === "M"
+      )
+        return accumulator - romanCharacters[currentCharacter];
+      return accumulator + romanCharacters[currentCharacter];
+    }, 0);
 }
