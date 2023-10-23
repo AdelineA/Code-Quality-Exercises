@@ -1,7 +1,7 @@
-function createPhoneBumber(number) {
-  let phoneNumber = "(***) ***-****";
-  for (let i = 0; i < number.length; i++) {
-    phoneNumber = phoneNumber.replace("*", number[i]);
+const createPhoneNumber = (number)=> {
+  let format = "(***) ***-****";
+  for (const element of number) {
+    format = format.replace("*", element);
   }
-  return phoneNumber;
+  return format;
 }
