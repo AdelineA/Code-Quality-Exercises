@@ -1,7 +1,7 @@
 const createPhoneNumber = (number)=> {
-  let format = "(***) ***-****";
+  let phoneNumberFormat = "(***) ***-****";
   for (const element of number) {
-    format = format.replace("*", element);
+    phoneNumberFormat = phoneNumberFormat.replace("*", element);
   }
-  return format;
+  return phoneNumberFormat;
 }
