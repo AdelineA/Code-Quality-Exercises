@@ -19,6 +19,10 @@ function isPrime(n) {
 }
 
 // function to find the sum of all elements in an array recursively
+function sumOfArray(n) {
+  if (n.length === 0) return 0;
+  return n.shift()  + sumOfArray(n);
+}
 
 // function to remove duplicate elements from an array
 function removeDuplicate(arr) {
