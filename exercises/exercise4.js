@@ -18,3 +18,11 @@ function isPrime(n) {
   }
 }
 
+// function to find the sum of all elements in an array recursively
+
+// function to remove duplicate elements from an array
+function removeDuplicate(arr) {
+  return arr.filter((item, index) => {
+    return arr.indexOf(item) === index;
+  });
+}
