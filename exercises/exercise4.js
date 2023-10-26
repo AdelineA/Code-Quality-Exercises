@@ -27,7 +27,6 @@ const flattenArray = (arr) => {
 
 // function to check if a number is prime or not
 function isPrime(num) {
-  if (num != "number") return false;
   if (num < 2) {
     return false;
   }
