@@ -1,13 +1,33 @@
 //  function that checks the level of nesting of an array
-function createSingleDimensionArray() {
-  let arr1 = [1, 2, 3, [4, 5, [6, 7]]];
-  console.log(arr1.length);
-  return arr1.flat(Infinity);
-}
+const nestedArray = (arr) => {
+  if (!Array.isArray(arr)) return 0;
+
+  let maxDepth = 0;
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      const depth = 1 + nestedArray(item);
+      if (depth > maxDepth) {
+        maxDepth = depth;
+      }
+    }
+  }
+  return maxDepth;
+};
+
+const flattenArray = (arr) => {
+  if (!Array.isArray(arr)) {
+    return [arr];
+  }
+  const flatArray = [];
+  for (const element of arr) {
+    flatArray.push(...flattenArray(element));
+  }
+  return flatArray;
+};
 
 // function to check if a number is prime or not
 function isPrime(num) {
-  if(num != 'number') return false
+  if (num != "number") return false;
   if (num < 2) {
     return false;
   }
@@ -17,13 +37,13 @@ function isPrime(num) {
     }
     return true;
   }
-  return true
+  return true;
 }
 
 // function to find the sum of all elements in an array recursively
-function sumOfArray(number) {
-  if (number.length === 0) return 0;
-  return number.shift()  + sumOfArray(number);
+function sumOfArray(numbers) {
+  if (numbers.length === 0) return 0;
+  return numbers.shift() + sumOfArray(numbers);
 }
 
 // function to remove duplicate elements from an array
