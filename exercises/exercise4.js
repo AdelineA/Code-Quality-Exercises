@@ -6,27 +6,29 @@ function createSingleDimensionArray() {
 }
 
 // function to check if a number is prime or not
-function isPrime(n) {
-  if (n === 1) {
+function isPrime(num) {
+  if(num != 'number') return false
+  if (num < 2) {
     return false;
   }
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
       return false;
     }
     return true;
   }
+  return true
 }
 
 // function to find the sum of all elements in an array recursively
-function sumOfArray(n) {
-  if (n.length === 0) return 0;
-  return n.shift()  + sumOfArray(n);
+function sumOfArray(number) {
+  if (number.length === 0) return 0;
+  return number.shift()  + sumOfArray(number);
 }
 
 // function to remove duplicate elements from an array
-function removeDuplicate(arr) {
-  return arr.filter((item, index) => {
-    return arr.indexOf(item) === index;
+function removeDuplicate(array) {
+  return array.filter((item, index) => {
+    return array.indexOf(item) === index;
   });
 }
