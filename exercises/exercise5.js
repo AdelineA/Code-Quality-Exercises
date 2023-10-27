@@ -6,7 +6,7 @@ const convertNumberToBinary = (num) => {
 
 // function to calculate the Fibonacci sequence up to a given number
 
-const fibonacci = (num) => {
+const getFibonacciSequence = (num) => {
   if (num <= 1) return num;
-  return fibonacci(num - 1) + fibonacci(num - 2);
+  return getFibonacciSequence(num - 1) + getFibonacciSequence(num - 2);
 };
